@@ -22,7 +22,7 @@ public class shellcommands implements CommandAbstraction {
 
     @Override
     public String exec(ExecutePack pack) {
-        Collection<String> cmds = getOSCommands();
+        Collection<String> cmds = getOSCommands(pack.context);
         List<String> commands = new ArrayList<>(cmds);
 
         Collections.sort(commands, Tuils::alphabeticCompare);
@@ -39,13 +39,34 @@ public class shellcommands implements CommandAbstraction {
             "/system/xbin"
     };
 
-    private Set<String> getOSCommands() {
+    private Set<String> getOSCommands(android.content.Context context) {
         Set<String> commands = new HashSet<>();
 
         for (String s : path) {
             String[] f = new File(s).list();
             if(f != null) {
                 commands.addAll(Arrays.asList(f));
+            }
+        }
+
+        File internalBin = new File(context.getFilesDir(), "bin");
+        File busybox = new File(internalBin, "busybox");
+        
+        if (busybox.exists()) {
+            try {
+                Process process = Runtime.getRuntime().exec(new String[]{busybox.getAbsolutePath(), "--list"});
+                java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(process.getInputStream()));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    commands.add(line.trim());
+                }
+                process.waitFor();
+            } catch (Exception e) {
+                // Fallback to just the file list if execution fails
+                String[] f = internalBin.list();
+                if(f != null) {
+                    commands.addAll(Arrays.asList(f));
+                }
             }
         }
 

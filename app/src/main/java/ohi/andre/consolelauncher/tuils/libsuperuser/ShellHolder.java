@@ -25,6 +25,9 @@ public class ShellHolder {
     Pattern p = Pattern.compile("^\\n");
 
     public Shell.Interactive build() {
+        File binDir = new File(context.getFilesDir(), "bin");
+        if (!binDir.exists()) binDir.mkdir();
+
         Shell.Interactive interactive = new Shell.Builder()
                 .setOnSTDOUTLineListener(line -> {
                     line = p.matcher(line).replaceAll(Tuils.EMPTYSTRING);
@@ -35,6 +38,8 @@ public class ShellHolder {
                     Tuils.sendOutput(context, line, TerminalManager.CATEGORY_OUTPUT);
                 })
                 .open();
+        
+        interactive.addCommand("export PATH=" + binDir.getAbsolutePath() + ":$PATH");
         interactive.addCommand("cd " + XMLPrefsManager.get(File.class, Behavior.home_path));
         return interactive;
     }

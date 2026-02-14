@@ -322,7 +322,7 @@
     </string>
     <string name="help_share">$ share [pathToFile]
     </string>
-    <string name="help_shellcommands">Print the commands in /system/bin and /system/xbin</string>
+    <string name="help_shellcommands">Print the available shell commands (system and bundled)</string>
     <string name="help_shortcut">-ls [appName] -> show the shortcuts of this app
         \n-use [shortcutID OR shortcut index] [optional: appName] -> use the specified shortcut
         \n-cp [index] [appName] -> copy to clipboard the nth shortcut of the selected app (first: 0)</string>
@@ -440,4 +440,5 @@
     </string>
 
     <string name="help_username">Change the username and device name: username [new_user] [new_device]</string>
+    <string name="help_busybox">-install -> download and setup BusyBox\n-remove -> uninstall BusyBox</string>
 </resources>

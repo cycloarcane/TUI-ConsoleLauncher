@@ -15,11 +15,27 @@ A modernized version of the original T-UI Linux CLI Launcher, updated for compat
 This fork ensures the launcher remains functional, secure, and performant on modern Android devices (Android 11 through Android 14+).
 
 ### ✨ New Features
+*   **Built-in BusyBox Manager:** Gain access to 300+ Linux commands (ls, grep, awk, top, etc.) via the new `busybox` command.
 *   **Theme Preset Shortcut Buttons:** Enhanced the `theme -preset` command to show interactive shortcut buttons for presets (blue, red, green, pink, bw, cyberpunk).
 *   **Synchronized Theme UI:** Applying a preset now automatically colors the shortcut buttons (suggestions) to match the overall theme.
 *   **One-Tap Application:** Shortcut buttons for theme presets execute immediately upon clicking.
 
-### 🛠 Modern Build System
+---
+
+## 🐧 BusyBox Integration
+
+To enable a full Linux environment, you can install BusyBox directly from the launcher:
+
+1.  Type `busybox -install` in the terminal.
+2.  The launcher will automatically detect your architecture, download the verified binary, and check its integrity.
+3.  Once finished, you can run any Linux command directly (e.g., `ls`, `ping`, `vi`).
+4.  To remove it at any time, use `busybox -remove`.
+
+**Security Note:** Binaries are sourced from the trusted EXALAB repository and are verified against hardcoded SHA-256 hashes to ensure they have not been tampered with.
+
+---
+
+## 🛠 Modern Build System
 *   **Target SDK:** Updated to **API 34 (Android 14)**.
 *   **Min SDK:** API 21 (Android 5.0).
 *   **AndroidX Migration:** Fully migrated from legacy Support Libraries to **AndroidX**.
