@@ -1,7 +1,9 @@
 package ohi.andre.consolelauncher.tuils.libsuperuser;
 
 import android.content.Context;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 
 import ohi.andre.consolelauncher.managers.TerminalManager;
@@ -41,8 +43,7 @@ public class ShellHolder {
         if (BusyBoxInstaller.isInstalled(context)) {
             String bbPath = BusyBoxInstaller.getBusyboxPath(context);
             if (bbPath != null) {
-                // 1. Alias 'busybox' to the native library path
-                // This is the ONLY path Android 10+ allows execution from.
+                // 1. Alias 'busybox' to the downloaded path
                 interactive.addCommand("alias busybox='" + bbPath + "'");
 
                 // 2. Add common applet aliases so they use BusyBox instead of Toybox

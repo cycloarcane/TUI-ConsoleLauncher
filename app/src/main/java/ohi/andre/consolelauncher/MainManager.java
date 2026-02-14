@@ -200,7 +200,6 @@ public class MainManager {
         rssManager = new RssManager(mContext, client);
         themeManager = new ThemeManager(client, mContext, c);
         musicManager2 = XMLPrefsManager.getBoolean(Behavior.enable_music) ? new MusicManager2(mContext) : null;
-        ChangelogManager.printLog(mContext, client);
         htmlExtractManager = new HTMLExtractManager(mContext, client);
 
         if(XMLPrefsManager.getBoolean(Behavior.show_hints)) {
