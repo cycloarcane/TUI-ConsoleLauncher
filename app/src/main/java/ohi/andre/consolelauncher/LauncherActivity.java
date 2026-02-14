@@ -255,7 +255,6 @@ public class LauncherActivity extends AppCompatActivity implements Reloadable {
         Thread.currentThread().setUncaughtExceptionHandler(new CustomExceptionHandler());
 
         XMLPrefsManager.loadCommons(this);
-        BusyBoxInstaller.setup(this);
         new RegexManager(LauncherActivity.this);
         new TimeManager(this);
 
