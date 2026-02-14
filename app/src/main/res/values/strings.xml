@@ -322,7 +322,6 @@
     </string>
     <string name="help_share">$ share [pathToFile]
     </string>
-    <string name="help_shellcommands">Print the available shell commands (system and bundled)</string>
     <string name="help_shortcut">-ls [appName] -> show the shortcuts of this app
         \n-use [shortcutID OR shortcut index] [optional: appName] -> use the specified shortcut
         \n-cp [index] [appName] -> copy to clipboard the nth shortcut of the selected app (first: 0)</string>
