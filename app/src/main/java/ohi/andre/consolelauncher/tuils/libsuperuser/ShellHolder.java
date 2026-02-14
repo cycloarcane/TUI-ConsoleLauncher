@@ -38,8 +38,6 @@ public class ShellHolder {
                 })
                 .open();
         interactive.addCommand("export PATH=" + binDir.getAbsolutePath() + ":$PATH");
-        // Also add an alias for busybox to point to the .so file
-        interactive.addCommand("alias busybox=libbusybox.so");
         interactive.addCommand("cd " + XMLPrefsManager.get(File.class, Behavior.home_path));
         return interactive;
     }
