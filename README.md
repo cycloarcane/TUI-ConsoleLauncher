@@ -26,10 +26,10 @@ This fork ensures the launcher remains functional, secure, and performant on mod
 
 To enable a full Linux environment, you can install BusyBox directly from the launcher:
 
-1.  Type `busybox -install` in the terminal.
+1.  Type `bbman -install` in the terminal.
 2.  The launcher will automatically detect your architecture, download the verified binary, and check its integrity.
 3.  Once finished, you can run any Linux command directly (e.g., `ls`, `ping`, `vi`).
-4.  To remove it at any time, use `busybox -remove`.
+4.  To remove it at any time, use `bbman -remove`.
 
 **Security Note:** Binaries are sourced from the trusted EXALAB repository and are verified against hardcoded SHA-256 hashes to ensure they have not been tampered with.
 

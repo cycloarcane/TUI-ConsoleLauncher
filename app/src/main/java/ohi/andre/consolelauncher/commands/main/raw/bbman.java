@@ -8,7 +8,7 @@ import ohi.andre.consolelauncher.tuils.BusyBoxInstaller;
 import ohi.andre.consolelauncher.tuils.Tuils;
 import ohi.andre.consolelauncher.managers.TerminalManager;
 
-public class busybox extends ParamCommand {
+public class bbman extends ParamCommand {
 
     private enum Param implements ohi.andre.consolelauncher.commands.main.Param {
         install {
@@ -72,7 +72,7 @@ public class busybox extends ParamCommand {
     public int priority() { return 5; }
 
     @Override
-    public int helpRes() { return R.string.help_busybox; }
+    public int helpRes() { return R.string.help_bbman; }
 
     @Override
     protected String doThings(ExecutePack pack) { return null; }

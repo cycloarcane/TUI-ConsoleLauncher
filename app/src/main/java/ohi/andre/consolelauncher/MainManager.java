@@ -529,7 +529,7 @@ public class MainManager {
                 String[] common = {"ping", "echo", "ls", "grep", "cat", "vi", "top", "ps", "ip"};
                 for (String c : common) {
                     if (cmd.equalsIgnoreCase(c)) {
-                        Tuils.sendOutput(mContext, "Command not found. You can install BusyBox using the shortcut button above your keyboard.", TerminalManager.CATEGORY_OUTPUT);
+                        Tuils.sendOutput(mContext, "Command not found. You can install BusyBox using: bbman -install", TerminalManager.CATEGORY_OUTPUT);
                         return true;
                     }
                 }
