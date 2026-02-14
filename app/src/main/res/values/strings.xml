@@ -327,11 +327,11 @@
         \n-use [shortcutID OR shortcut index] [optional: appName] -> use the specified shortcut
         \n-cp [index] [appName] -> copy to clipboard the nth shortcut of the selected app (first: 0)</string>
     <string name="help_status">Get info about battery charge, wifi status and mobile data</string>
-    <string name="help_theme">-apply [name] -> apply the selected theme (case sensitive). require internet connection. may take some seconds
+    <string name="help_theme">-apply [path] -> apply a theme from a local file
+        \n-set [element] [color] -> manually set a color
+        \n-preset [name] -> apply a built-in preset (blue, red, green, pink, bw, cyberpunk)
         \n-old -> re-apply the theme that was replaced by the current one
-        \n-standard -> apply the standard theme
-        \n-view -> view the available themes
-        \n-create -> create a new theme</string>
+        \n-standard -> apply the standard theme</string>
     <string name="help_time">Print the current time with the given format
         \n\nUsage:
         \n$ time [index] (index means the index of the desired time_format</string>
@@ -439,4 +439,5 @@
         \n$ open [pathToFile]
     </string>
 
+    <string name="help_username">Change the username and device name: username [new_user] [new_device]</string>
 </resources>
