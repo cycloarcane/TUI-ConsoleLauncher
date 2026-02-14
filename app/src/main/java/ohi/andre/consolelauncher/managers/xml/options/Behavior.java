@@ -146,7 +146,7 @@ public enum Behavior implements XMLPrefsSave {
     show_hints {
         @Override
         public String defaultValue() {
-            return "true";
+            return "false";
         }
 
         @Override
