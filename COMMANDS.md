@@ -76,4 +76,4 @@ adb push local_file.txt /data/user/0/ohi.andre.consolelauncher/files/
 ---
 
 ## 🛡 Security Note
-All binaries are verified using hardcoded SHA-256 hashes found in `app/src/main/java/ohi/andre/consolelauncher/commands/main/raw/bbman.java`. All network transport is forced over HTTPS.
+All binaries are verified using hardcoded SHA-256 hashes found in `app/src/main/java/ohi/andre/consolelauncher/tuils/BusyBoxInstaller.java`. All network transport is forced over HTTPS.
